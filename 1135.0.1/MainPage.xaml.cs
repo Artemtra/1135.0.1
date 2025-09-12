@@ -50,8 +50,8 @@
             if (!displayLabel.Text.Contains("."))
             {
                 string currentText = currentNumber.ToString();
-                currentText += ".";
-                currentNumber = double.Parse(currentText);
+                //currentText += ".";
+                currentNumber = double.Parse(currentText + ".");
                 UpdateDisplay();
             }
         }
