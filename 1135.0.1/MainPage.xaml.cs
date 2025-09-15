@@ -14,7 +14,11 @@
             UpdateDisplay();
         }
 
- 
+        private void UpdateDisplay()
+        {
+            displayLabel.Text = currentNumber.ToString();
+            historyLabel.Text = calculationHistory;
+        }
 
         private void OnDigitClicked(object sender, EventArgs e)
         {
@@ -46,8 +50,8 @@
             if (!displayLabel.Text.Contains("."))
             {
                 string currentText = currentNumber.ToString();
-                //currentText += ".";
-                currentNumber = double.Parse(currentText + ".");
+                currentText += ".";
+                currentNumber = double.Parse(currentText);
                 UpdateDisplay();
             }
         }
@@ -106,6 +110,28 @@
                 previousNumber = 0;
             }
         }
+        private void OnClearAllMemory(object sender, EventArgs e)
+        {
+            calculationHistory += "";
+        }
+        private void OnMemoryRecall(object sender, EventArgs e)
+        {
+            calculationHistory = "";
+        }
+        private void OnMemoryAdd(object sender, EventArgs e)
+        {
+            calculationHistory = "";
+        }
+        private void OnMemorySubact(object sender, EventArgs e)
+        {
+            calculationHistory = "";
+        }
+        private void OnMemoryStore(object sender, EventArgs e)
+        {
+            calculationHistory = "";
+        }
+
+
 
         private void OnClearClicked(object sender, EventArgs e)
         {

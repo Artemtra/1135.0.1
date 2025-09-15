@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_1135._0._1.MainPage">
-    <Grid Background="DarkGray">
+    <Grid Background="DarkGray" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -22,6 +22,7 @@
         </StackLayout>
 
         <StackLayout Grid.Row="1" Grid.Column="0">
+            <Button Text="MC" HeightRequest="30" CornerRadius="30" Background="DarkGray" FontAttributes="Bold" FontSize="20" TextColor="Black" Clicked="OnClearAllMemory"/>
                 <Button Text="%" HeightRequest="30" CornerRadius="30" Background="Gray"   Clicked="OnPercentageClicked"/>
                 <Button Text="CE" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnClearEntryClicked"/>
                 <Button Text="7" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
@@ -31,7 +32,8 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Button Text="√" HeightRequest="30" CornerRadius="30" Background="Gray" Clicked="OnSquareRootClicked"/>
+            <Button Text="MR" HeightRequest="30" CornerRadius="30" Background="DarkGray" FontAttributes="Bold" FontSize="20" TextColor="Black" Clicked="OnMemoryRecall" />
+            <Button Text="√" HeightRequest="30" CornerRadius="30" Background="Gray" Clicked="OnSquareRootClicked"/>
                 <Button Text="C" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnClearClicked"/>
                 <Button Text="8" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
                 <Button Text="5" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
@@ -39,17 +41,21 @@
                 <Button Text="0" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="1" Grid.Column="2">
-                <Button Text="x²" HeightRequest="30" CornerRadius="30" Background="Gray" Clicked="OnSquareClicked"/>
-                <Button Text="DEL" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDeleteClicked"/>
-                <Button Text="9" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
-                <Button Text="6" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
-                <Button Text="3" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
-                <Button Text="." HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDecimalClicked"/>
-            </StackLayout>
-
-            <StackLayout Grid.Row="1" Grid.Column="3">
-                <Button Text="1/x" HeightRequest="30" CornerRadius="30" Background="Orange" Clicked="OnReciprocalClicked"/>
+        <StackLayout Grid.Row="1" Grid.Column="2">
+            <Button Text="M+" HeightRequest="30" CornerRadius="30" Background="DarkGray" FontAttributes="Bold" FontSize="20" TextColor="Black" Clicked="OnMemoryAdd"/>
+            <Button Text="x²" HeightRequest="30" CornerRadius="30" Background="Gray" Clicked="OnSquareClicked"/>
+            <Button Text="DEL" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDeleteClicked"/>
+            <Button Text="9" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
+            <Button Text="6" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
+            <Button Text="3" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
+            <Button Text="." HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDecimalClicked"/>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="3">
+            <HorizontalStackLayout>
+                <Button Text="M-" HeightRequest="30" CornerRadius="30" Background="DarkGray" FontAttributes="Bold" FontSize="20" TextColor="Black" Clicked="OnMemorySubact"/>
+                <Button Text="MS" HeightRequest="30" CornerRadius="30" Background="DarkGray" FontAttributes="Bold" FontSize="20" TextColor="Black" Clicked="OnMemoryStore"/>
+            </HorizontalStackLayout>
+            <Button Text="1/x" HeightRequest="30" CornerRadius="30" Background="Orange" Clicked="OnReciprocalClicked"/>
                 <Button Text="/" HeightRequest="30" CornerRadius="30" Background="Orange" Clicked="OnOperatorClicked"/>
                 <Button Text="X" HeightRequest="30" CornerRadius="30" Background="Orange" Clicked="OnOperatorClicked"/>
                 <Button Text="-" HeightRequest="30" CornerRadius="30" Background="Orange" Clicked="OnOperatorClicked"/>
