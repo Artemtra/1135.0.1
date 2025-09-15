@@ -14,11 +14,7 @@
             UpdateDisplay();
         }
 
-        private void UpdateDisplay()
-        {
-            displayLabel.Text = currentNumber.ToString();
-            historyLabel.Text = calculationHistory;
-        }
+ 
 
         private void OnDigitClicked(object sender, EventArgs e)
         {
