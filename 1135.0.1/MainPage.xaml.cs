@@ -31,7 +31,7 @@
                 isNewOperation = false;
             }
 
-            if (currentNumber == 0 && !displayLabel.Text.Contains("."))
+            if (currentNumber == 0 && !displayLabel.Text.Contains(","))
             {
                 currentNumber = double.Parse(digit);
             }
@@ -47,13 +47,16 @@
 
         private void OnDecimalClicked(object sender, EventArgs e)
         {
-            if (!displayLabel.Text.Contains("."))
+            if (isNewOperation)
             {
-                string currentText = currentNumber.ToString();
-                currentText += ".";
-                currentNumber = double.Parse(currentText);
-                UpdateDisplay();
+                currentNumber = 0;
+                isNewOperation = false;
             }
+            if (!displayLabel.Text.Contains(","))
+            {
+                displayLabel.Text += ",";
+            }
+
         }
 
         private void OnOperatorClicked(object sender, EventArgs e)
@@ -172,8 +175,13 @@
 
         private void OnPercentageClicked(object sender, EventArgs e)
         {
-            currentNumber /= 100;
-            UpdateDisplay();
+            if (historyLabel.Text != null)
+            {
+            displayLabel.Text = (currentNumber / 100).ToString();
+            }
+
+            
+
         }
 
         private void OnSquareRootClicked(object sender, EventArgs e)

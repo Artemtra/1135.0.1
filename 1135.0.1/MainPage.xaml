@@ -4,10 +4,10 @@
              x:Class="_1135._0._1.MainPage">
     <Grid Background="DarkGray" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="85"/>
-            <ColumnDefinition Width="85"/>
-            <ColumnDefinition Width="85"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -48,7 +48,7 @@
             <Button Text="9" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
             <Button Text="6" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
             <Button Text="3" HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDigitClicked"/>
-            <Button Text="." HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDecimalClicked"/>
+            <Button Text="," HeightRequest="30" CornerRadius="30" Background="Black" Clicked="OnDecimalClicked"/>
         </StackLayout>
         <StackLayout Grid.Row="1" Grid.Column="3">
             <HorizontalStackLayout>
