@@ -8,6 +8,8 @@
         private string currentOperation = "";
         private bool isNewOperation = true;
         private string calculationHistory = "";
+        private double memoryValue = 0; 
+        private bool memoryHasValue = false;
         public MainPage()
         {
             InitializeComponent();
@@ -115,23 +117,34 @@
         }
         private void OnClearAllMemory(object sender, EventArgs e)
         {
-            calculationHistory += "";
+            memoryValue = 0;
+            memoryHasValue = false;
+            DisplayAlert("Память", "история очищенна", "OK");
         }
         private void OnMemoryRecall(object sender, EventArgs e)
         {
-            calculationHistory = "";
+            if (memoryHasValue)
+            {
+                currentNumber = memoryValue;
+                UpdateDisplay();
+            }
         }
         private void OnMemoryAdd(object sender, EventArgs e)
         {
-            calculationHistory = "";
+            memoryValue += currentNumber;
+            memoryHasValue = true;
+            UpdateDisplay();
         }
         private void OnMemorySubact(object sender, EventArgs e)
         {
-            calculationHistory = "";
+            memoryValue -= currentNumber;
+            memoryHasValue = true;
+            UpdateDisplay();
         }
         private void OnMemoryStore(object sender, EventArgs e)
         {
-            calculationHistory = "";
+            memoryValue = currentNumber;
+            memoryHasValue = true;
         }
 
 
@@ -175,13 +188,11 @@
 
         private void OnPercentageClicked(object sender, EventArgs e)
         {
-            if (historyLabel.Text != null)
+            if (!string.IsNullOrEmpty(historyLabel.Text))
             {
             displayLabel.Text = (currentNumber / 100).ToString();
+
             }
-
-            
-
         }
 
         private void OnSquareRootClicked(object sender, EventArgs e)
